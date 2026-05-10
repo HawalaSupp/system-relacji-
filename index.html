@@ -161,8 +161,26 @@
         .guarantee-box { display: flex; flex-direction: column; align-items: center; max-width: 700px; margin: 0 auto; }
         .guarantee-box svg { width: 64px; height: 64px; stroke: var(--primary-start); margin-bottom: 24px; }
 
-        .toast-container { position: fixed; bottom: 32px; left: 32px; z-index: 1000; pointer-events: none; }
-        .toast { background: white; border-radius: 16px; padding: 16px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; transform: translateY(100px); opacity: 0; transition: all 0.5s; border: 1px solid #EAEAEA; }
+        .toast-container { position: fixed; bottom: 32px; left: 32px; z-index: 1000; pointer-events: none; display: flex; flex-direction: column; gap: 12px; }
+        .toast { background: white; border-radius: 16px; padding: 16px 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; transform: translateY(100px); opacity: 0; transition: all 0.5s; border: 1px solid #EAEAEA; width: 100%; min-width: 300px; }
+        @media (max-width: 768px) {
+            .toast-container { 
+                bottom: 20px; 
+                right: 16px; 
+                left: auto;
+                max-width: calc(100vw - 32px);
+            }
+            .toast {
+                min-width: auto;
+                width: 100%;
+                max-width: 320px;
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
+            .toast-img { width: 36px; height: 36px; font-size: 0.9rem; }
+            .toast-text p { font-size: 0.8rem; }
+            .toast-text span { font-size: 0.7rem; }
+        }
         .toast.show { transform: translateY(0); opacity: 1; }
         .toast-img { width: 40px; height: 40px; background: var(--gradient); border-radius: 50%; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; }
         .toast-text p { margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
@@ -507,10 +525,10 @@
             </div>
             
             <div class="audio-testimonials-grid" style="margin-top: 48px;">
-                <!-- Testimonial 1: Mariusz -->
+                <!-- Testimonial 1: Paweł -->
                 <div class="audio-card reveal-up">
-                    <div class="audio-avatar">M</div>
-                    <div class="audio-name">Mariusz</div>
+                    <div class="audio-avatar"><img src="https://i.pravatar.cc/150?img=12" alt="Paweł"></div>
+                    <div class="audio-name">Paweł</div>
                     <div class="audio-rating">★★★★★</div>
                     <div class="audio-opinion">"System rzeczywiście zmienia perspektywę. Zaaplikowałem dokładnie zgodnie z instrukcjami i efekty są niesamowite."</div>
                     <button class="audio-player-btn" onclick="playAudio(event, 0)">
@@ -521,10 +539,10 @@
                     </audio>
                 </div>
 
-                <!-- Testimonial 2: Mikołaj (1) -->
+                <!-- Testimonial 2: Łukasz -->
                 <div class="audio-card reveal-up">
-                    <div class="audio-avatar">M</div>
-                    <div class="audio-name">Mikołaj</div>
+                    <div class="audio-avatar"><img src="https://i.pravatar.cc/150?img=24" alt="Łukasz"></div>
+                    <div class="audio-name">Łukasz</div>
                     <div class="audio-rating">★★★★★</div>
                     <div class="audio-opinion">"Wskaźniki skoku dopasowań są realne. Po tygodniu moja średnia wzrosła z 3 na 18 matchy tygodniowo."</div>
                     <button class="audio-player-btn" onclick="playAudio(event, 1)">
@@ -535,10 +553,10 @@
                     </audio>
                 </div>
 
-                <!-- Testimonial 3: Mikołaj (2) -->
+                <!-- Testimonial 3: Damian -->
                 <div class="audio-card reveal-up">
-                    <div class="audio-avatar">M</div>
-                    <div class="audio-name">Mikołaj</div>
+                    <div class="audio-avatar"><img src="https://i.pravatar.cc/150?img=35" alt="Damian"></div>
+                    <div class="audio-name">Damian</div>
                     <div class="audio-rating">★★★★★</div>
                     <div class="audio-opinion">"Instrukcje są precyzyjne i łatwe do zastosowania. Najbardziej pomogły mi skrypty do napisów wiadomości."</div>
                     <button class="audio-player-btn" onclick="playAudio(event, 2)">
@@ -549,10 +567,10 @@
                     </audio>
                 </div>
 
-                <!-- Testimonial 4: Wiktor -->
+                <!-- Testimonial 4: Szymon -->
                 <div class="audio-card reveal-up">
-                    <div class="audio-avatar">W</div>
-                    <div class="audio-name">Wiktor</div>
+                    <div class="audio-avatar"><img src="https://i.pravatar.cc/150?img=47" alt="Szymon"></div>
+                    <div class="audio-name">Szymon</div>
                     <div class="audio-rating">★★★★★</div>
                     <div class="audio-opinion">"Gwarancja zwrotu dała mi poczucie bezpieczeństwa. Ale nie potrzebowałem jej - efekty były natychmiast."</div>
                     <button class="audio-player-btn" onclick="playAudio(event, 3)">
